@@ -1,0 +1,21 @@
+.page {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 100%;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+}
+.login{
+  grid-area: 1 / 2 / 2 / 3;
+}
+.info {
+  text-align: center;
+  grid-area: 1 / 1 / 2 / 2;
+  img{
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 10px;
+    border: rgba(209,209,241,0.5) 1px solid;
+    box-shadow: 0 0 26px 10px rgba(0,0,0,0.4);
+  }
+}

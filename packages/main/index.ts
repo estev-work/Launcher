@@ -20,6 +20,15 @@ let win: BrowserWindow | null = null
 async function createWindow() {
   win = new BrowserWindow({
     title: 'Main window',
+    width:1250,
+    height:800,
+    backgroundColor: 'rgba(0,0,0,0)',
+    titleBarOverlay:{
+      color:'rgb(22,40,56)',
+      symbolColor:'#bdbdf8'
+    },
+    titleBarStyle:'hidden',
+    resizable: false,
     webPreferences: {
       preload: join(__dirname, '../preload/index.cjs')
     },
@@ -32,7 +41,7 @@ async function createWindow() {
     const url = `http://${process.env['VITE_DEV_SERVER_HOST']}:${process.env['VITE_DEV_SERVER_PORT']}`
 
     win.loadURL(url)
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools({mode:'detach'})
   }
 
   // Test active push message to Renderer-process

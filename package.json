@@ -1,10 +1,10 @@
 {
-  "name": "vite-react-electron",
-  "productName": "Electron",
+  "name": "BDO Launcher",
+  "productName": "BlackDesert Launcher",
   "private": true,
   "version": "1.0.0",
-  "description": "Vite React Electron boilerplate.",
-  "author": "草鞋没号 <308487730@qq.com>",
+  "description": "BlackDesert Launcher",
+  "author": "Estev <estev.work@gmail.com>",
   "license": "MIT",
   "main": "dist/main/index.cjs",
   "scripts": {
@@ -15,6 +15,11 @@
     "node": ">=14.17.0"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/lab": "^5.0.0-alpha.82",
+    "@mui/material": "^5.8.0",
     "electron-store": "^8.0.1"
   },
   "devDependencies": {

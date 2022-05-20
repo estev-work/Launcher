@@ -1,4 +1,5 @@
 body {
+  display: block;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +11,29 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.header_panel{
+  height: 32px;
+  top: 0;
+  position: sticky;
+  background-color: #162838;
+  text-align: center;
+  -webkit-app-region: drag;
+}
+.name_window{
+  color: #e4e4ff;
+  vertical-align: middle;
+}
+.window{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80% 20%;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  min-height: calc(100vh - 32px);
+  min-width: 100vh;
+}
+.MuiTimelineConnector-root{
+  color: #0056ff;
+  border: #0056ff;
 }

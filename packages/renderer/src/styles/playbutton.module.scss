@@ -1,0 +1,20 @@
+$btnColor1: #00ffff;
+$btnColor2: #0056ff;
+$shadowColor: rgba(2, 87, 255, 0.38);
+$shadowColorHover: rgba(255, 0, 0, 0.52);
+
+.container {
+  margin:20px;
+  grid-area: 1 / 2 / 2 / 3;
+  vertical-align:middle;
+}
+.playButton{
+  height:100px;
+  width:100px;
+  box-shadow: 1px 1px 5px 6px ($shadowColor);
+  border: #e4e4ff 2px;
+  &:hover{
+    box-shadow: 1px 1px 5px 6px ($shadowColorHover);
+    color: $btnColor1;
+  }
+}
