@@ -19,7 +19,7 @@ let win: BrowserWindow | null = null
 
 async function createWindow() {
   win = new BrowserWindow({
-    title: 'Main window',
+    title: 'Black Desert Launcher',
     width:1250,
     height:800,
     backgroundColor: 'rgba(0,0,0,0)',

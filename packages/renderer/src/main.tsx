@@ -14,7 +14,7 @@ root.render(
             backgroundSize: "cover",
         }}>
             <div className="header_panel">
-                <span className="name_window">BlackDesert Launcher</span>
+                <span className="name_window">Black Desert Launcher</span>
             </div>
             <div className="window">
                 <App/>
