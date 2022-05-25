@@ -18,10 +18,15 @@ const reactDevToolsPath = path.join(
     os.homedir(),
     'AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\fmkadmapgofadopljbjfkapdkoienihi\\4.24.6_0'
 )
+const reduxDevToolsPath = path.join(
+    os.homedir(),
+    'AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\lmhkpmbekcpmknklioeibfkpmmfibljd\\3.0.11_0'
+)
 let win: BrowserWindow | null = null
 
 async function createWindow() {
   await session.defaultSession.loadExtension(reactDevToolsPath)
+  await session.defaultSession.loadExtension(reduxDevToolsPath)
   win = new BrowserWindow({
     title: 'Black Desert Launcher',
     width:1250,

@@ -1,24 +1,26 @@
 import React, {useState} from 'react';
 import {Button, TextField} from "@mui/material";
 import logo from '@/assets/logo.png'
+import {useAppDispatch, useAppSelector} from "@/hooks/redux";
+import {userSlice} from "@/store/reducers/UserSlice";
+import {IUser} from "@/models/IUser";
 const AuthComponent = () => {
 
-    let [login, setLogin] = useState<string>('loginInStorage');
-    let [password, setPassword] = useState<string>('passwordInStorage');
+    const {user, isAuth, isLoading, error} = useAppSelector(state => state.userReducer);
+    const { setUserData, setPassword, setLogin} = userSlice.actions;
+    const dispatch = useAppDispatch();
+
+    let [name, setLoginState] = useState<string>('');
+    let [pass, setPasswordState] = useState<string>('');
 
     const handleChangeLogin = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setLogin(event.target.value);
+        setLoginState(event.target.value);
     };
     const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(event.target.value);
+        setPasswordState(event.target.value);
     };
     const authorized = () => {
-        if (login !== null) {
-            localStorage.setItem("login", login);
-        }
-        if (password !== null) {
-            localStorage.setItem("password", password);
-        }
+        dispatch(setUserData({login:name, password:pass}));
     };
     return (
         <div style={{textAlign: "center"}}>
@@ -27,7 +29,7 @@ const AuthComponent = () => {
             </div>
             <div style={{marginTop: 135}}>
                 <TextField
-                    itemRef={login}
+                    itemRef={user.login}
                     id="login-field"
                     color={"warning"}
                     label="Login"
@@ -38,7 +40,7 @@ const AuthComponent = () => {
             </div>
             <div>
                 <TextField
-                    itemRef={password}
+                    itemRef={user.password}
                     id="password-field"
                     color={"warning"}
                     label="Password"
