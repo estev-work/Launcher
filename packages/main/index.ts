@@ -1,6 +1,6 @@
-import { app, BrowserWindow, shell } from 'electron'
-import { release } from 'os'
-import { join } from 'path'
+import {app, BrowserWindow, session, shell} from 'electron'
+import os, { release } from 'os'
+import path, { join } from 'path'
 import './samples/electron-store'
 import './samples/npm-esm-packages'
 
@@ -14,12 +14,21 @@ if (!app.requestSingleInstanceLock()) {
   app.quit()
   process.exit(0)
 }
-
+const reactDevToolsPath = path.join(
+    os.homedir(),
+    'AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\fmkadmapgofadopljbjfkapdkoienihi\\4.24.6_0'
+)
+const reduxDevToolsPath = path.join(
+    os.homedir(),
+    'AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\lmhkpmbekcpmknklioeibfkpmmfibljd\\3.0.11_0'
+)
 let win: BrowserWindow | null = null
 
 async function createWindow() {
+  await session.defaultSession.loadExtension(reactDevToolsPath)
+  await session.defaultSession.loadExtension(reduxDevToolsPath)
   win = new BrowserWindow({
-    title: 'Main window',
+    title: 'Black Desert Launcher',
     width:1250,
     height:800,
     backgroundColor: 'rgba(0,0,0,0)',

@@ -5,8 +5,12 @@ import './samples/electron-store'
 import './samples/preload-module'
 import './styles/index.css'
 import background from './assets/background-3.jpg'
+import {Provider} from "react-redux";
+import {setupStore} from "@/store/store";
 
+const store = setupStore();
 const root = createRoot(document.getElementById('root')!)
+
 root.render(
     <StrictMode>
         <div style={{
@@ -14,10 +18,12 @@ root.render(
             backgroundSize: "cover",
         }}>
             <div className="header_panel">
-                <span className="name_window">BlackDesert Launcher</span>
+                <span className="name_window">Black Desert Launcher</span>
             </div>
             <div className="window">
-                <App/>
+                <Provider store={store}>
+                    <App/>
+                </Provider>
             </div>
         </div>
     </StrictMode>
