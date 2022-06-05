@@ -1,11 +1,11 @@
 import React from 'react';
 import {Button} from "@mui/material";
 import style from '@/styles/playbutton.module.scss'
-import {userSlice} from "@/store/reducers/UserSlice";
+import {accountSlice} from "@/store/reducers/AccountSlice";
 import {useAppDispatch} from "@/hooks/redux";
 
 const PlayButtonComponent = () => {
-    const { logout} = userSlice.actions;
+    const { logout} = accountSlice.actions;
     const dispatch = useAppDispatch();
     const onClick = ()=>{
         dispatch(logout());

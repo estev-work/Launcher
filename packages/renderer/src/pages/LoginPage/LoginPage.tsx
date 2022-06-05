@@ -5,7 +5,7 @@ import AuthComponent from "@/components/Auth/AuthComponent";
 import NewsComponent from "@/components/News/NewsComponent";
 import {useAppSelector} from "@/hooks/redux";
 const LoginPage = () => {
-    const {isAuth} = useAppSelector(state => state.userReducer);
+    const {isAuth} = useAppSelector(state => state.accountReducer);
     return (
         <div style={{minHeight:"100%"}} className={style.page} >
             <div className={style.info}>
